@@ -55,19 +55,19 @@ Step 2: Place the source datasets under the following directory structure:
 
 ```text
 /ssd1/dataset/ICL_tracking
-└── video
-    ├── LASOT
-    │   └── <class>
-    │       └── <subclass>
-    ├── burst
-    │   ├── annotations
-    │   └── frames
-    ├── got10k
-    │   └── val
-    │       └── <class>
-    └── VastTrack
-        └── <class>
-            └── <subclass>
+                └── video
+                    ├── LASOT
+                    │   └── <class>
+                    │       └── <subclass>
+                    ├── burst
+                    │   ├── annotations
+                    │   └── frames
+                    ├── got10k
+                    │   └── val
+                    │       └── <class>
+                    └── VastTrack
+                        └── <class>
+                            └── <subclass>
 ```
 
 Step 3: Run the following command to export the minimum set of images required to run the input data JSON files (`./data/*.json`) from `/ssd1/dataset/ICL_tracking` to `/ssd1/dataset/ICL_tracking_minimized`.
