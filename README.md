@@ -1,32 +1,18 @@
-
-
-
-
-
 <p align="center">
-  <img src="overview.png">
+  <img src="overview.png" width="900">
 </p>
 
 <p align="center">
   <em>Figure 1. Framework of IPLoc-ID.</em>
 </p>
 
+# Official Code of IPLoc-ID
 
+This repository provides the HuggingFace implementation (PyTorch) of the paper:
 
-# The official code of IPLoc-ID
+**Personalized Object Identification and Localization via In-Context Inference of Vision-Language Models**
 
-This repository provides the HuggingFace implementation (Pytorch) of the paper:
-
-** Personalized Object Identification and Localization via In-Context Inference of Vision-Language Models **
-
-<!--
-Currently, we provide a minimal inference implementation and a trained model for reproducing the inference procedure.
-
-The complete dataset construction scripts, training code, and trained models will be released in accordance with the journal's policy after the paper is published.
--->
-
-
-
+Currently, we provide dataset construction scripts, inference implementation, and a minimal trained model. The training code and additional trained models will be released upon acceptance.
 
 # Installation
 
@@ -63,7 +49,7 @@ accelerate config
 
 Please prepare the input data according to the dataset format described below.
 
-Step 1: Download the original datasets: LaSOT, PDM (BURST), GOT-10k, and VastTrack, from the official websites.
+Step 1: Download the original datasets, LaSOT, PDM (BURST), GOT-10k, and VastTrack, from their official websites.
 
 Step 2: Place the source datasets under the following directory structure:
 
@@ -87,46 +73,26 @@ Step 2: Place the source datasets under the following directory structure:
 Step 3: Run the following command to export the minimum set of images required to run the input data JSON files (`./data/*.json`) from `/ssd1/dataset/ICL_tracking` to `/ssd1/dataset/ICL_tracking_minimized`.
 
 ```bash
-bash extract_dataset.sh
+bash iplocid/extract_dataset.sh
 ```
 
-Alternatively, you can generate the input data JSON files from scratch by running the following command.
-In this case, ICL_tracking_minimized will also be generated automatically.
+Alternatively, you can generate the input data JSON files from scratch by running the following command. In this case, `/ssd1/dataset/ICL_tracking_minimized` will also be generated automatically.
 
 ```bash
-bash shell_build_data-json.sh
+bash iplocid/shell_build_data-json.sh
 ```
-<!--
--->
-
-
-
 
 # Model Download
 
-Step 1: Download the trained models from the following links:
+Complete model sets will be released upon acceptance.
+
+Step 1: Download the trained IPLoc-ID model from the following link:
 
 - [Qwen3-VL-8B-Instruct_iplocid](https://drive.google.com/drive/folders/dummy_link)
-- Qwen3-VL-32B-Instruct_iplocid
-- Qwen2-VL-7-Instruct_iplocid
-  
-<!--
-- [Qwen3-VL-8B-Instruct_iplocid](https://drive.google.com/drive/folders/dummy_link)
-- [Qwen3-VL-32B-Instruct_iplocid](https://drive.google.com/drive/folders/dummy_link)
-- [Qwen2-VL-7-Instruct_iplocid](https://drive.google.com/drive/folders/dummy_link)
--->
 
-We also provide our reproduced IPLoc models from the previous method:
+We also provide our reproduced IPLoc model from the previous method:
 
 - [Qwen3-VL-8B-Instruct_iploc](https://drive.google.com/drive/folders/dummy_link)
-- Qwen3-VL-32B-Instruct_iploc
-- Qwen2-VL-7-Instruct_iploc
-  
-<!--
-- [Qwen3-VL-8B-Instruct_iploc](https://drive.google.com/drive/folders/dummy_link)
-- [Qwen3-VL-32B-Instruct_iploc](https://drive.google.com/drive/folders/dummy_link)
-- [Qwen2-VL-7-Instruct_iploc](https://drive.google.com/drive/folders/dummy_link)
--->
 
 If necessary, download the pretrained weights from the previous work, IPLoc, from the **Model Download** section of the following repository:
 
@@ -137,11 +103,11 @@ Specifically, please download `QWEN2-VL-ICL-LOC`.
 Step 2: Place the pretrained weights as follows:
 
 ```text
-├── iploc
+├── iplocid
 └── pretrained_weights
     ├── Qwen3-VL-8B-Instruct_iplocid       # our trained IPLoc-ID model
     ├── Qwen3-VL-8B-Instruct_iploc         # our reproduced IPLoc model
-    ├── :
+    ├── ...
     └── Qwen2VL-7b-ICL-Loc                 # original IPLoc model
 ```
 
@@ -150,29 +116,26 @@ Step 2: Place the pretrained weights as follows:
 Run the inference script as follows:
 
 ```bash
-bash inference.sh
+bash iplocid/inference.sh
 ```
 
 # Training
 
-Run the training script as follows:
+The training code will be released upon acceptance.
+
+After release, the training script can be run as follows:
 
 ```bash
-bash training.sh
+bash iplocid/training.sh
 ```
-<!--
-The complete training code and configuration files will be released after the paper is published.
--->
 
 # Evaluation
 
-For full evaluation of the trained model, please refer to the following script:
+The evaluation script can be run as follows:
 
 ```bash
-bash evaluation.sh
+bash iplocid/evaluation.sh
 ```
-
-
 
 # Citation
 
@@ -191,8 +154,4 @@ The arXiv citation information will be provided here.
 
 This work is built upon the pioneering work of Doveh et al.:
 
-Sivan Doveh et al.,
-“Teaching VLMs to Localize Specific Objects from In-Context Examples,”
-Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025.
-
-```
+Sivan Doveh et al., “Teaching VLMs to Localize Specific Objects from In-Context Examples,” Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025.
