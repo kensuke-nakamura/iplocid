@@ -93,8 +93,8 @@ Step 1: Download the trained model directories from the following Google Drive f
 The folder contains:
 
 ```text
-Qwen3-VL-8B-Instruct_iplocid:  the trained IPLoc-ID model
-Qwen3-VL-8B-Instruct_iploc: our reproduced IPLoc mode
+Qwen3-VL-8B-Instruct_1shot_iplocid:  the trained IPLoc-ID model
+Qwen3-VL-8B-Instruct_1shot_iploc: our reproduced IPLoc mode
 ```
 
 If necessary, download the pretrained weights from the previous work, IPLoc, from the **Model Download** section of the following repository:
@@ -108,8 +108,8 @@ Step 2: Place the pretrained weights as follows:
 ```text
 ├── iplocid
 └── pretrained_weights
-    ├── Qwen3-VL-8B-Instruct_iplocid       # our trained IPLoc-ID model
-    ├── Qwen3-VL-8B-Instruct_iploc         # our reproduced IPLoc model
+    ├── Qwen3-VL-8B-Instruct_1shot_iplocid       # our trained IPLoc-ID model
+    ├── Qwen3-VL-8B-Instruct_1shot_iploc         # our reproduced IPLoc model
     ├── ...
     └── Qwen2VL-7b-ICL-Loc                 # original IPLoc model
 ```
