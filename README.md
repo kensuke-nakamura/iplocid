@@ -86,13 +86,16 @@ bash iplocid/shell_build_data-json.sh
 
 Complete model sets will be released upon acceptance.
 
-Step 1: Download the trained IPLoc-ID model from the following link:
+Step 1: Download the trained model directories from the following Google Drive folder:
 
-- [Qwen3-VL-8B-Instruct_iplocid]([https://drive.google.com/drive/folders/dummy_link](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing))
+- [IPLoc-ID model files](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing)
 
-We also provide our reproduced IPLoc model from the previous method:
+The folder contains:
 
-- [Qwen3-VL-8B-Instruct_iploc]([https://drive.google.com/drive/folders/dummy_link](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing))
+```text
+Qwen3-VL-8B-Instruct_iplocid:  the trained IPLoc-ID model
+Qwen3-VL-8B-Instruct_iploc: our reproduced IPLoc mode
+```
 
 If necessary, download the pretrained weights from the previous work, IPLoc, from the **Model Download** section of the following repository:
 
