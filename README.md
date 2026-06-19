@@ -88,11 +88,11 @@ Complete model sets will be released upon acceptance.
 
 Step 1: Download the trained IPLoc-ID model from the following link:
 
-- [Qwen3-VL-8B-Instruct_iplocid](https://drive.google.com/drive/folders/dummy_link)
+- [Qwen3-VL-8B-Instruct_iplocid]([https://drive.google.com/drive/folders/dummy_link](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing))
 
 We also provide our reproduced IPLoc model from the previous method:
 
-- [Qwen3-VL-8B-Instruct_iploc](https://drive.google.com/drive/folders/dummy_link)
+- [Qwen3-VL-8B-Instruct_iploc]([https://drive.google.com/drive/folders/dummy_link](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing))
 
 If necessary, download the pretrained weights from the previous work, IPLoc, from the **Model Download** section of the following repository:
 
