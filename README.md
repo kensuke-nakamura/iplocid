@@ -12,7 +12,10 @@ This repository provides the HuggingFace implementation (PyTorch) of the paper:
 
 **Personalized Object Identification and Localization via In-Context Inference of Vision-Language Models**
 
-Currently, we provide dataset construction scripts, inference implementation, and a minimal trained model. The training code and additional trained models will be released upon acceptance.
+This paper is currently under review.
+
+At this stage, we provide dataset construction scripts, inference implementation, and a minimal trained model. 
+The training code and additional trained models will be released upon acceptance.
 
 # Installation
 
