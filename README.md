@@ -91,7 +91,7 @@ Complete model sets will be released upon acceptance.
 
 Step 1: Download the trained model directories from the following Google Drive folder:
 
-- [IPLoc-ID model files](https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing)
+- [IPLoc-ID model files]([https://drive.google.com/drive/folders/11uFYdNaaNYS0341A3u4t9iBZrjzrJGPW?usp=sharing](https://drive.google.com/drive/folders/1QQiz6nf95FzelkIExOmVy5kR4vZfYIDI?usp=sharing))
 
 The folder contains:
 
