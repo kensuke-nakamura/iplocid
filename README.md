@@ -94,7 +94,7 @@ The folder contains:
 
 ```text
 Qwen3-VL-8B-Instruct_1shot_iplocid:  the trained IPLoc-ID model
-Qwen3-VL-8B-Instruct_1shot_iploc: our reproduced IPLoc mode
+Qwen3-VL-8B-Instruct_1shot_iploc: reproduced IPLoc model
 ```
 
 If necessary, download the pretrained weights from the previous work, IPLoc, from the **Model Download** section of the following repository:
@@ -142,16 +142,7 @@ bash iplocid/evaluation.sh
 
 # Citation
 
-The arXiv citation information will be provided here.
-
-```bibtex
-@article{iplocid,
-  title   = {[Paper Title]},
-  author  = {[Author Names]},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-  year    = {2026}
-}
-```
+The citation information will be updated here after the arXiv version becomes available.
 
 # Acknowledgement
 
