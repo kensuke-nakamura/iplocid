@@ -19,7 +19,7 @@
 
 This repository provides the HuggingFace implementation (PyTorch) of the paper:
 
-**Personalized Object Identification and Localization via In-Context Inference of Vision-Language Models**
+**Personalized Object Identification and Localization via In-Context Inference with Vision-Language Models**
 
 This paper is currently under review.
 
@@ -154,7 +154,18 @@ bash iplocid/evaluation.sh
 
 # Citation
 
-The citation information will be updated here after the arXiv version becomes available.
+# Citation
+
+If you find this repository useful, please cite our paper:
+
+```bibtex
+@article{nakamura2026personalized,
+  title   = {Personalized Object Identification and Localization via In-Context Inference with Vision-Language Models},
+  author  = {Nakamura, Kensuke and Hong, Byung-Woo},
+  journal = {arXiv preprint arXiv:2607.00357},
+  year    = {2026}
+}
+```
 
 # Acknowledgement
 
