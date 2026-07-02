@@ -154,8 +154,6 @@ bash iplocid/evaluation.sh
 
 # Citation
 
-# Citation
-
 If you find this repository useful, please cite our paper:
 
 ```bibtex
