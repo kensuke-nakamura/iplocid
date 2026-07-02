@@ -157,7 +157,7 @@ bash iplocid/evaluation.sh
 If you find this repository useful, please cite our paper:
 
 ```bibtex
-@article{nakamura2026personalized,
+@article{nakamura2026iplocid,
   title   = {Personalized Object Identification and Localization via In-Context Inference with Vision-Language Models},
   author  = {Nakamura, Kensuke and Hong, Byung-Woo},
   journal = {arXiv preprint arXiv:2607.00357},
