@@ -11,7 +11,7 @@
   <img src="inference.png" width="900">
 </p>
 <p align="center">
-  <em>Figure 2. In-context inference examples on positive and negative query images. IPLoc-ID suppresses false-positive detections, highlighted by magenta boxes, while preserving correct detections shown in green.</em>
+  <em>Figure 2. IPLoc-ID reduces false-positive detections on negative query images, shown by magenta boxes, while maintaining correct target localization shown in green.</em>
 </p>
 
 
