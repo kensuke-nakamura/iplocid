@@ -120,6 +120,11 @@ def _extract_model_token(tokens: List[str]) -> str:
     return ""
 
 
+def _format_poil(value):
+    value = _safe_float(value)
+    return "" if value is None else f"{value:.6f}"
+
+
 def summarize_metrics_jsons(metrics_paths: List[str], out_path: str):
     """Write a compact summary CSV (kept minimal)."""
     rows = []
@@ -139,15 +144,16 @@ def summarize_metrics_jsons(metrics_paths: List[str], out_path: str):
                 "IoU_TP": _safe_float(js.get("miou_bbox_TP")) or 0.0,
                 "IoU_TPFN": _safe_float(js.get("miou_bbox_T")) or 0.0,
                 "FullIoU": _safe_float(js.get("mIoU_full_for_all_targets")) or 0.0,
+                "POIL_Score": js.get("POIL_Score"),
             }
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
-        f.write("Algorithm,TP,FP,TN,FN,IoU_TP,IoU_TPFN,FullIoU\n")
+        f.write("Algorithm,TP,FP,TN,FN,IoU_TP,IoU_TPFN,FullIoU,POIL_Score\n")
         for r in rows:
             f.write(
                 f"{r['Algorithm']},{r['TP']},{r['FP']},{r['TN']},{r['FN']},"
-                f"{r['IoU_TP']:.6f},{r['IoU_TPFN']:.6f},{r['FullIoU']:.6f}\n"
+                f"{r['IoU_TP']:.6f},{r['IoU_TPFN']:.6f},{r['FullIoU']:.6f},{_format_poil(r['POIL_Score'])}\n"
             )
 
 
@@ -220,6 +226,7 @@ def rank_by_best_full_iou(metrics_paths: List[str], results_dir: str, min_step: 
             "step": int(step),
             "algo": algo,
             "full_iou": float(full_iou),
+            "POIL_Score": js.get("POIL_Score"),
             "TP": _safe_int(js.get("TP")) or 0,
             "FP": _safe_int(js.get("FP")) or 0,
             "TN": _safe_int(js.get("TN")) or 0,
@@ -237,6 +244,7 @@ def rank_by_best_full_iou(metrics_paths: List[str], results_dir: str, min_step: 
             continue
         best_by_series[sid] = {
             "best_full": float(chosen["full_iou"]),
+            "POIL_Score": chosen["POIL_Score"],
             "best_step": int(chosen["step"]),
             "best_algo": str(chosen["algo"]),
             "TP": int(chosen["TP"]),
@@ -257,7 +265,7 @@ def rank_by_best_full_iou(metrics_paths: List[str], results_dir: str, min_step: 
         f.write("# Ranking by best FullTargetIoU_mean over steps\n")
         f.write(f"# results_dir: {results_dir}\n")
         f.write(
-            "inference_data, training_data, backbone, label, best_full_iou, best_step, best_algo, iou_tp, iou_tpfn, TP, FP, TN, FN\n"
+            "inference_data, training_data, backbone, label, best_full_iou, best_step, best_algo, iou_tp, iou_tpfn, TP, FP, TN, FN, POIL_Score\n"
         )
 
         for _sid, v in ranked:
@@ -295,7 +303,7 @@ def rank_by_best_full_iou(metrics_paths: List[str], results_dir: str, min_step: 
                 f"{training_data},{backbone},{label},"
                 f"{float(v['best_full']):.6f},step{int(v['best_step'])},{v['best_algo']},"
                 f"{float(v['iou_tp']):.6f},{float(v['iou_tpfn']):.6f},"
-                f"{int(v['TP'])},{int(v['FP'])},{int(v['TN'])},{int(v['FN'])}\n"
+                f"{int(v['TP'])},{int(v['FP'])},{int(v['TN'])},{int(v['FN'])},{_format_poil(v['POIL_Score'])}\n"
             )
 
 

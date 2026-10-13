@@ -37,6 +37,7 @@ from PIL  import Image
 import torchvision.ops as ops
 
 from loc_dataset import get_dataloader
+from poil_metrics import poil_metrics
 from utils_qwen  import eval_bbox
 
 # local
@@ -823,6 +824,8 @@ if __name__ == "__main__":
         "FP": int(conf_counts.get("FP", 0)),
         "FN": int(conf_counts.get("FN", 0)),
     }
+
+    metrics_payload.update(poil_metrics(outputs_records))
 
     with open(metrics_out_path, "w", encoding="utf-8") as f:
         json.dump(metrics_payload, f, ensure_ascii=False, indent=2)
